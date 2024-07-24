@@ -18,7 +18,7 @@ where:
 - $L_i(x)$ is the Lagrange basis polynomial
 - $x$ is the point at which we want to interpolate $f(x)$
 
-We can also write the formula as:
+We can also write the formula (called expanded form) as follows:
 
 $$
 f(x) = \sum_{i=0}^{n} f(x_i) \cdot \prod_{\substack{0 \leq j \leq n \\ j \neq i}} \frac{x - x_j}{x_i - x_j}
@@ -28,12 +28,6 @@ Where \( L_i(x) \) is the Lagrange polynomial given by:
 
 $$
 L_i(x) = \prod_{\substack{0 \leq j \leq n \\ j \neq i}} \frac{x - x_j}{x_i - x_j}
-$$
-
-The extended formula is:
-
-$$
-f(x) = \sum_{i=0}^{n} f(x_i) \cdot \frac{\prod_{\substack{0 \leq j \leq n \\ j \neq i}} (x - x_j)}{\prod_{\substack{0 \leq j \leq n \\ j \neq i}} (x_i - x_j)}
 $$
 
 ## Reference
