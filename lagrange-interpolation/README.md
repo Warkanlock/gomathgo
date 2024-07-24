@@ -12,12 +12,12 @@ $$
 
 where:
 
-- \( f(x) \) is the function that we want to interpolate
-- \( x_i \) is the data point
-- \( f(x_i) \) is the value of the function at \( x_i \)
-- \( L_i(x) \) is the Lagrange basis polynomial
-- \( x \) is the point at which we want to interpolate \( f(x) \)
-
+- $f(x)$ is the function that we want to interpolate
+- $x_i$ is the data point
+- $f(x_i)$ is the value of the function at $x_i$ (also represented as $y_i$)
+- $L_i(x)$ is the Lagrange basis polynomial
+- $x$ is the point at which we want to interpolate $f(x)$
+-
 We can also write the formula as:
 
 $$
