@@ -24,7 +24,7 @@ $$
 f(x) = \sum_{i=0}^{n} f(x_i) \cdot \prod_{\substack{0 \leq j \leq n \\ j \neq i}} \frac{x - x_j}{x_i - x_j}
 $$
 
-Where \( L_i(x) \) is the Lagrange polynomial given by:
+Where $L_i(x)$ is the Lagrange polynomial given by:
 
 $$
 L_i(x) = \prod_{\substack{0 \leq j \leq n \\ j \neq i}} \frac{x - x_j}{x_i - x_j}
