@@ -7,8 +7,9 @@ Here is generalized so we can do:
 ```bash
 :!go run main.go 1000 3 5 -15
 
-[3 5 -15]
-Multiples of: 3 [=166833.000000]                                                            Multiples of: 5 [=99500.000000]                                                         
+> [3 5 -15]
+Multiples of: 3 [=166833.000000]
+Multiples of: 5 [=99500.000000]                                                         
 Multiples of: -15 [=-33165.000000]                                                      
 Total multiples sum is: 233168
 ```
