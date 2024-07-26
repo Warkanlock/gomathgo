@@ -26,3 +26,4 @@ The main goal is for me to understand the underlying concepts and to keep track 
 ## Implementations
 
 - `lagrange-interpolation`: Simple Lagrange Interpolation based on user input
+- `arithmetic-progression`: Arithmetic Progression implementation for $S_n$ term
