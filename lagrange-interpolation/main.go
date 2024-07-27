@@ -13,11 +13,11 @@ func clearScreen() {
 }
 
 func showCoordinatesTable(points []common.Point) {
-	fmt.Println("\n Coordinates Table:")
+	fmt.Println("\nCoordinates Table:")
 	// list all points provided as input
-	fmt.Printf(" | x | y |\n")
+	fmt.Printf("| x | y |\n")
 	for _, point := range points {
-		fmt.Printf(" | %f | %f |\n", point.X, point.Y)
+		fmt.Printf("| %f | %f |\n", point.X, point.Y)
 	}
 }
 
@@ -31,9 +31,8 @@ func getPolynomial(points []common.Point) {
 
 	// create and show the polynomial
 	polynomial := common.Polynomial{}.New(coefficients)
-	polynomial.Show()
 
-	panic("Not implemented yet")
+	fmt.Println(polynomial)
 }
 
 func waitForInterrupt(stop chan bool) {
@@ -43,7 +42,7 @@ func waitForInterrupt(stop chan bool) {
 
 	// wait for an interrupt signal
 	<-sigs
-	fmt.Println("\n Stopping...")
+	fmt.Println("\nStopping...")
 
 	// send a true to the channel as response
 	stop <- true
