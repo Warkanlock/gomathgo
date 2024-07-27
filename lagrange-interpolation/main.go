@@ -8,26 +8,31 @@ import (
 	"syscall"
 )
 
-type Coordinate struct {
-	x int
-	y int
-}
-
 func clearScreen() {
 	fmt.Print("\033[H\033[2J")
 }
 
-func showCoordinatesTable(points []Coordinate) {
+func showCoordinatesTable(points []common.Point) {
 	fmt.Println("\n Coordinates Table:")
 	// list all points provided as input
 	fmt.Printf(" | x | y |\n")
 	for _, point := range points {
-		fmt.Printf(" | %d | %d |\n", point.x, point.y)
+		fmt.Printf(" | %f | %f |\n", point.X, point.Y)
 	}
 }
 
-func getPolynomial(points []Coordinate) {
-	common.NewPolynomial(0)
+func getPolynomial(points []common.Point) {
+	var coefficients []common.Coefficient
+
+	for _, point := range points {
+		// create a list of coefficients based on the x values
+		coefficients = append(coefficients, common.Coefficient(point.X))
+	}
+
+	// create and show the polynomial
+	polynomial := common.Polynomial{}.New(coefficients)
+	polynomial.Show()
+
 	panic("Not implemented yet")
 }
 
@@ -46,7 +51,7 @@ func waitForInterrupt(stop chan bool) {
 
 func main() {
 	var x, y int
-	var points []Coordinate
+	var points []common.Point
 
 	fmt.Printf("Insert (x,y) coordinates from points \n")
 
@@ -67,7 +72,7 @@ func main() {
 			}
 
 			// add x,y to points array
-			points = append(points, Coordinate{x, y})
+			points = append(points, common.Point{X: float64(x), Y: float64(y)})
 		}
 	}()
 
