@@ -1,4 +1,4 @@
-# Multiples of X,Y...N
+# Arithmetic Progression of X,Y...N
 
 This program was part of [Problem 1](https://projecteuler.net/problem=1) of Project Euler, where we need to find the sum of all the multiples of 3 or 5 below 1000.
 

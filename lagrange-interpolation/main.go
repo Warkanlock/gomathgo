@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"gomathgo/common"
 	"os"
 	"os/signal"
 	"syscall"
@@ -26,6 +27,7 @@ func showCoordinatesTable(points []Coordinate) {
 }
 
 func getPolynomial(points []Coordinate) {
+	common.NewPolynomial(0)
 	panic("Not implemented yet")
 }
 
