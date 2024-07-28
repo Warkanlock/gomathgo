@@ -30,9 +30,8 @@ func getPolynomial(points []polynomial.Point) {
 	}
 
 	// create and show the polynomial
-	polynomial := polynomial.Polynomial{}.New(coefficients)
-
-	fmt.Println(polynomial)
+	p := polynomial.NewPolynomial(coefficients)
+	fmt.Println(p)
 }
 
 func waitForInterrupt(stop chan bool) {
