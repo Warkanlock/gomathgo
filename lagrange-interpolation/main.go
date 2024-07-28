@@ -22,16 +22,15 @@ func showCoordinatesTable(points []polynomial.Point) {
 }
 
 func getPolynomial(points []polynomial.Point) {
-	var coefficients []polynomial.Coefficient
+	// create and show the polynomial
+	p, err := polynomial.Interpolate(points)
 
-	for _, point := range points {
-		// create a list of coefficients based on the x values
-		coefficients = append(coefficients, polynomial.Coefficient(point.X))
+	if err != nil {
+		fmt.Println("An error occur while interpolating:", err)
+		return
 	}
 
-	// create and show the polynomial
-	p := polynomial.NewPolynomial(coefficients)
-	fmt.Println(p)
+	fmt.Println("\nPolynomial:", p)
 }
 
 func waitForInterrupt(stop chan bool) {
