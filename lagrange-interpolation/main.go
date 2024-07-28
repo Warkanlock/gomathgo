@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"gomathgo/common"
+	"gomathgo/common/polynomial"
 	"os"
 	"os/signal"
 	"syscall"
@@ -12,7 +12,7 @@ func clearScreen() {
 	fmt.Print("\033[H\033[2J")
 }
 
-func showCoordinatesTable(points []common.Point) {
+func showCoordinatesTable(points []polynomial.Point) {
 	fmt.Println("\nCoordinates Table:")
 	// list all points provided as input
 	fmt.Printf("| x | y |\n")
@@ -21,16 +21,16 @@ func showCoordinatesTable(points []common.Point) {
 	}
 }
 
-func getPolynomial(points []common.Point) {
-	var coefficients []common.Coefficient
+func getPolynomial(points []polynomial.Point) {
+	var coefficients []polynomial.Coefficient
 
 	for _, point := range points {
 		// create a list of coefficients based on the x values
-		coefficients = append(coefficients, common.Coefficient(point.X))
+		coefficients = append(coefficients, polynomial.Coefficient(point.X))
 	}
 
 	// create and show the polynomial
-	polynomial := common.Polynomial{}.New(coefficients)
+	polynomial := polynomial.Polynomial{}.New(coefficients)
 
 	fmt.Println(polynomial)
 }
@@ -50,7 +50,7 @@ func waitForInterrupt(stop chan bool) {
 
 func main() {
 	var x, y int
-	var points []common.Point
+	var points []polynomial.Point
 
 	fmt.Printf("Insert (x,y) coordinates from points \n")
 
@@ -71,7 +71,7 @@ func main() {
 			}
 
 			// add x,y to points array
-			points = append(points, common.Point{X: float64(x), Y: float64(y)})
+			points = append(points, polynomial.Point{X: float64(x), Y: float64(y)})
 		}
 	}()
 
