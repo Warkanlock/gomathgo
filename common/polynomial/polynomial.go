@@ -86,7 +86,7 @@ func Interpolate(points []Point) (*Polynomial, error) {
 
 	// iterate over the points
 	for i, pointA := range points {
-		term := NewPolynomial([]Coefficient{1})
+		var term Polynomial
 		// evaluate polynomial at (x,y) on point
 		x, y := pointA.X, pointA.Y
 
@@ -104,14 +104,14 @@ func Interpolate(points []Point) (*Polynomial, error) {
 			p := NewPolynomial([]Coefficient{a0, a1})
 
 			// multiply the polynomial with the term
-			term = term.Multiply(*p)
+			term = *p
 		}
 
 		// multiply the term with the y value
-		term = term.Multiply(*NewPolynomial([]Coefficient{Coefficient(y)}))
+		term = *term.Multiply(*NewPolynomial([]Coefficient{Coefficient(y)}))
 
 		// append term to a list of terms
-		terms = append(terms, *term)
+		terms = append(terms, term)
 	}
 
 	if terms == nil {
