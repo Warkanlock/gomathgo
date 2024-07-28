@@ -27,3 +27,7 @@ The main goal is for me to understand the underlying concepts and to keep track 
 
 - `lagrange-interpolation`: Simple Lagrange Interpolation based on user input
 - `arithmetic-progression`: Arithmetic Progression implementation for $S_n$ term
+- `common`: Common functions used in other implementations
+    - `mathops`: Basic math operations.
+    - `array`: Methods related to array manipulation such as `FindDuplicates`, and more.
+    - `polynomial`: Generic polynomial constructor and operations related.
