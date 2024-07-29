@@ -1,4 +1,4 @@
-name: Build project
+name: Build common library
 
 on:
   push:
@@ -18,8 +18,8 @@ jobs:
       with:
         go-version: '1.22'
 
-    - name: Build common
-      run: go build -v ./common/...
+    - name: Build common 
+      run: cd common && go build -v ./...
 
     - name: Test common library
-      run: go test -v ./common/...
+      run: cd common && go test -v ./...

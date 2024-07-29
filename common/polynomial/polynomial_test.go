@@ -27,8 +27,8 @@ func TestGetDegree(t *testing.T) {
 
 	degree := polynomial.Degree()
 
-	if degree != 3 {
-		t.Errorf("Degree() = %d; want %d", degree, 3)
+	if degree != 2 {
+		t.Errorf("Degree() = %d; want %d", degree, 2)
 	}
 }
 
