@@ -30,5 +30,11 @@ func main() {
 	// assign to each horse an specific id
 	assign_horses(horses, horses_size)
 
+	// we need to:
+	// 1. group into groups
+	// 2. race the first of each group
+	// 3. race the candidates
+	// 4. get the first, second and third position
+
 	fmt.Printf("All horses: %d\n", horses)
 }
